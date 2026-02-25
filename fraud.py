@@ -91,7 +91,7 @@ if not st.session_state.logged_in:
     st.stop()
 
 # ---------------- LOAD DATA ----------------
-df = pd.read_csv("fraud_detection.csv")
+df = pd.read_csv("https://www.kaggle.com/datasets/rupakroy/online-payments-fraud-detection-dataset?resource=download")
 df = df.drop(['nameOrig', 'nameDest'], axis=1)
 
 df['type'] = df['type'].map({
@@ -239,4 +239,5 @@ elif page == "📈 Analytics":
         st.pyplot(fig)
 
     else:
+
         st.info("No data available for analytics.")
